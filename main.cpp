@@ -17,19 +17,15 @@ int main(int argc, char *argv[])
     w.show();
 
 
- // QString pathx = "/users/jun/Desktop/1/2/4/5/";
-
-    ListDataSaveThread *listDataSaveThread = new ListDataSaveThread();
+    ListDataSaveThread *listDataSaveThread = new ListDataSaveThread("/users/jun/Desktop/1/", 5, 3);
     listDataSaveThread->start();
 
     int index = 1;
     int n = 50000;
     while(n--) {
-        char *s;
-         sprintf(s, "%d", index++);
-        QString ss(s);
+        QString s = QString::number(index++, 10);
         usleep(100 * 1000);
-        ListDataCache::insertData(ss);
+        ListDataCache::insertData(s);
     }
 
 
