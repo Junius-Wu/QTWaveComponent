@@ -27,7 +27,7 @@ SOURCES += main.cpp\
         mainwindow.cpp
 
 HEADERS  += mainwindow.h \
-    listdatasavethread.h \
-    FileDataCache.h
+    ListDataCache.h \
+    ListDataSaveThread.h
 
 FORMS    += mainwindow.ui

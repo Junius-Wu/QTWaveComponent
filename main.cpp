@@ -4,8 +4,8 @@
 #include <QTextStream>
 #include <QApplication>
 
-#include "listdatasavethread.h"
-#include "FileDataCache.h"
+#include "ListDataSaveThread.h"
+#include "ListDataCache.h"
 #include "qdebug.h"
 #define qout qDebug()
 
@@ -16,14 +16,20 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
+
+ // QString pathx = "/users/jun/Desktop/1/2/4/5/";
+
     ListDataSaveThread *listDataSaveThread = new ListDataSaveThread();
     listDataSaveThread->start();
 
-    QString ss("123");
+    int index = 1;
     int n = 50000;
     while(n--) {
+        char *s;
+         sprintf(s, "%d", index++);
+        QString ss(s);
         usleep(100 * 1000);
-        FileDataCache::insertData(ss);
+        ListDataCache::insertData(ss);
     }
 
 

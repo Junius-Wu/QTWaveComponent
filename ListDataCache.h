@@ -2,7 +2,9 @@
 #define DATABASECACHE_H
 #include <vector>
 #include <qstring.h>
-
+/**
+  *    列表数据存盘缓冲区
+  */
 #define MAX_CAP 50 // 单个缓冲区的最大容量
 int pCount = 0; // 打印计数
 
@@ -10,7 +12,7 @@ bool cacheSwitch = false;
 std::vector<QString> listDataCache0;
 std::vector<QString> listDataCache1;
 
-class FileDataCache
+class ListDataCache
 {
 public:
 
